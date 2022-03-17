@@ -3,12 +3,14 @@ MAINTAINER Hakarune
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package.json .
 
 RUN npm install
 
-COPY . .
+COPY . ./
 
-CMD ["npm", "run", "tsc"]
+RUN npm run tsc
 
 EXPOSE 8000
+
+CMD ["npm", "start"]
